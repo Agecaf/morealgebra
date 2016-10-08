@@ -1,0 +1,9 @@
+# Directories
+target/
+
+# IDE files
+.idea
+.ensime
+
+# Rough working
+src/test/scala/agecaf/morealgebra/RoughWorking.scala

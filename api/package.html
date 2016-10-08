@@ -1,0 +1,163 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>root - _root_</title>
+          <meta name="description" content="root - root " />
+          <meta name="keywords" content="root root " />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="lib/template.js"></script>
+      <script type="text/javascript" src="lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = 'index.html';
+            var hash = 'package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="lib/package_big.png" />
+        
+        <h1>root package</h1><span class="permalink">
+      <a href="index.html#package" title="Permalink" target="_top">
+        <img src="lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">root</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Some Algebraic Structures on top of Spire.algebra.</p><h3>Use</h3><p><code>morealgebra</code> uses <a href="https://github.com/non/spire" target="_blank">Spire</a> for its algebraic structures.
+However, <code>morealgebra</code> focuses on providing a lot of groups, rings and fields, as well
+as ways to combine and extend them.</p><p><b>Therefore, all the implicits provided in <code>morealgebra</code> are syntax implicits.</b></p><p>The preferred style of doing group member operations in <code>morealgebra</code> is</p><ul><li>Starting a block,</li><li>Declaring eximplicitly(*) which structure is used in the block,</li><li>And finally using the structure operations.</li></ul><p> (*) <b>Eximplicitly</b>: You, the user, have to write what implicit you're using.</p><pre><span class="kw">import</span> agecaf.morealgebra.groups._
+
+<span class="cmt">// Well, we have two different Groups on Double, what do we do?</span>
+<span class="kw">val</span> N: Group[<span class="std">Double</span>] = Double_+
+<span class="kw">val</span> H: Group[<span class="std">Double</span>] = Double_*
+
+<span class="cmt">// Start a block</span>
+{
+  <span class="cmt">// Eximplicitly declare which structure we're using.</span>
+  <span class="kw">implicit</span> <span class="kw">val</span> G = N
+
+  <span class="cmt">// Use the operations</span>
+  <span class="num">1.0</span> |+| <span class="num">2.0</span>  <span class="cmt">// 1 + 2 = 3.0</span>
+}
+
+{
+  <span class="kw">implicit</span> <span class="kw">val</span> G = H
+
+  <span class="num">1.0</span> |+| <span class="num">2.0</span>  <span class="cmt">// 1 * 2 = 2.0</span>
+}
+
+<span class="cmt">// This becomes more apparent when using more complex structures.</span>
+<span class="cmt">// For example, both direct and semidirect products act on tuple2s.</span>
+<span class="cmt">// This also exemplifies how you can operate on structures themselves,</span>
+<span class="cmt">// to make larger structures</span>
+
+<span class="kw">val</span> D: Group[(<span class="std">Double</span>, <span class="std">Double</span>)] =
+  DirectProduct(N, H)
+
+<span class="kw">val</span> S: Group[(<span class="std">Double</span>, <span class="std">Double</span>)] =
+  SemidirectProduct(N, H, {(x: <span class="std">Double</span>) <span class="kw">=&gt;</span> (y: <span class="std">Double</span>) <span class="kw">=&gt;</span> x*y}
+
+{
+  <span class="kw">implicit</span> <span class="kw">val</span> G = D
+
+  (<span class="num">1.0</span>, <span class="num">2.0</span>) |+| (<span class="num">3.0</span>, <span class="num">4.0</span>) <span class="cmt">// (1 + 3, 2 * 4) = (4.0, 8.0)</span>
+}
+
+{
+  <span class="kw">implicit</span> <span class="kw">val</span> G = S
+
+  (<span class="num">1.0</span>, <span class="num">2.0</span>) |+| (<span class="num">3.0</span>, <span class="num">4.0</span>) <span class="cmt">// (1 + 2 * 3, 2 * 4) = (7.0, 8.0)</span>
+}</pre><h3>Index</h3><h4>Groups</h4><p>See <a href="agecaf/morealgebra/groups/package.html" class="extype" name="agecaf.morealgebra.groups">agecaf.morealgebra.groups</a> for more details.</p><ul><li>Some Standard Groups for common types such as <code>Int</code>, <code>Double</code>.</li><li>Cyclic</li><li>Direct and Semidirect Products
+</li></ul></div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="_root_.agecaf" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="agecaf"></a>
+      <a id="agecaf:agecaf"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a href="agecaf/package.html"><span class="name">agecaf</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="index.html#package@agecaf" title="Permalink" target="_top">
+        <img src="lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>

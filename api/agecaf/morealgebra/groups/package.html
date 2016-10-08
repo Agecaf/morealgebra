@@ -1,0 +1,557 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>groups - agecaf.morealgebra.groups</title>
+          <meta name="description" content="groups - agecaf.morealgebra.groups" />
+          <meta name="keywords" content="groups agecaf.morealgebra.groups" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'agecaf.morealgebra.groups.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../lib/package_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="agecaf">agecaf</a>.<a href="../package.html" class="extype" name="agecaf.morealgebra">morealgebra</a></p>
+        <h1>groups</h1><span class="permalink">
+      <a href="../../../index.html#agecaf.morealgebra.groups.package" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">groups</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Contains Constructors and Syntax for groups, and some Standard Groups.</p><p>This package contains an ample set of constructor methods for groups,
+as well as some basic groups. It additionally includes the group
+syntax from Spire, so that further imports are not required.</p><h3>Implicits</h3><ul><li>Spire's syntax implicit conversions acting on group members.
+   This adds the |+| operator, for example.</li><li>Spire's syntax implicit conversions for Eq.
+   This adds the === operator, for example. Used for Cyclic groups for example.</li><li>MoreAlgebra's group implicit conversions. These are for syntax sugar for
+   DirectProducts for example. Note that these act on groups <code>Group[A]</code> rather than on
+   group members <code>A</code></li></ul><h3>Non Implicits</h3><ul><li>No instances of <code>Group[A]</code> are given implicitly. This is a design choice.</li><li>No instances of <code>Eq[A]</code> are given implicitly. This is a design choice.</li></ul></div><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="GroupSemidirectProduct.html" class="extype" name="agecaf.morealgebra.groups.GroupSemidirectProduct">GroupSemidirectProduct</a>, <a href="GroupDirectProduct.html" class="extype" name="agecaf.morealgebra.groups.GroupDirectProduct">GroupDirectProduct</a>, <a href="Standard.html" class="extype" name="agecaf.morealgebra.groups.Standard">Standard</a>, <a href="FromSpire.html" class="extype" name="agecaf.morealgebra.groups.FromSpire">FromSpire</a>, <span class="extype" name="spire.syntax.EqSyntax">EqSyntax</span>, <span class="extype" name="spire.syntax.GroupSyntax">GroupSyntax</span>, <span class="extype" name="spire.syntax.MonoidSyntax">MonoidSyntax</span>, <span class="extype" name="spire.syntax.SemigroupSyntax">SemigroupSyntax</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By Inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="agecaf.morealgebra.groups"><span>groups</span></li><li class="in" name="agecaf.morealgebra.groups.GroupSemidirectProduct"><span>GroupSemidirectProduct</span></li><li class="in" name="agecaf.morealgebra.groups.GroupDirectProduct"><span>GroupDirectProduct</span></li><li class="in" name="agecaf.morealgebra.groups.Standard"><span>Standard</span></li><li class="in" name="agecaf.morealgebra.groups.FromSpire"><span>FromSpire</span></li><li class="in" name="spire.syntax.EqSyntax"><span>EqSyntax</span></li><li class="in" name="spire.syntax.GroupSyntax"><span>GroupSyntax</span></li><li class="in" name="spire.syntax.MonoidSyntax"><span>MonoidSyntax</span></li><li class="in" name="spire.syntax.SemigroupSyntax"><span>SemigroupSyntax</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show All</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="agecaf.morealgebra.groups.Cyclic" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="CyclicextendsAbGroup[Int]withEq[Int]"></a>
+      <a id="Cyclic:Cyclic"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="Cyclic.html"><span class="name">Cyclic</span></a><span class="result"> extends <span class="extype" name="spire.algebra.AbGroup">AbGroup</span>[<span class="extype" name="scala.Int">Int</span>] with <span class="extype" name="spire.algebra.Eq">Eq</span>[<span class="extype" name="scala.Int">Int</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#agecaf.morealgebra.groups.package@CyclicextendsAbGroup[Int]withEq[Int]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Cyclic Group structure, on top of Int.</p><div class="fullcomment"><div class="comment cmt"><p>Cyclic Group structure, on top of Int.
+</p></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>If you want to use the Cyclic Group's <code>Eq[Int]</code> structure (for modulo
+      congruences), make sure to not import <code>spire.implicits._</code>, as this
+      includes an overriding <code>Eq[Int]</code> structure.</p></span></dd><dt>See also</dt><dd><span class="cmt"><p><a href="https://en.wikipedia.org/wiki/Cyclic_group" target="_blank">Cyclic Groups (Wikipedia)</a></p><h3>Currently supported Structures</h3><ul><li>Abelian Group.</li><li>Equivalence classes on Int.</li></ul><h3>Use</h3><pre><span class="cmt">// Minimal imports</span>
+<span class="kw">import</span> agecaf.morealgebra.groups.GroupSyntax._
+<span class="kw">import</span> agecaf.morealgebra.groups.Cyclic
+<span class="cmt">// Alternatively</span>
+<span class="cmt">// import agecaf.morealgebra.groups._</span>
+{
+  <span class="cmt">// Declare your implicit group!</span>
+  <span class="kw">implicit</span> <span class="kw">val</span> C3 = Cyclic(<span class="num">3</span>) <span class="cmt">// C3: Group[Int] with Eq[Int]</span>
+  <span class="cmt">// Using Group[Int]</span>
+  <span class="num">1</span> |+| <span class="num">2</span>   <span class="cmt">// 3 === 0</span>
+  <span class="num">1</span> |-| <span class="num">2</span>   <span class="cmt">// -1 === 2</span>
+  <span class="num">1.</span>inverse <span class="cmt">// 2</span>
+  C3.id     <span class="cmt">// 0</span>
+  <span class="cmt">// Using Eq[Int]</span>
+  <span class="num">4</span> === <span class="num">1</span> <span class="cmt">// true</span>
+  <span class="num">1</span> =!= <span class="num">2</span> <span class="cmt">// true</span>
+  <span class="cmt">// Due to operator precedence, the parentheses are unfortunately required.</span>
+  (<span class="num">1</span> |+| <span class="num">1</span>) === <span class="num">2</span> <span class="cmt">// true</span>
+}
+{
+  <span class="cmt">// Use blocks to use different implicit groups.</span>
+  <span class="kw">implicit</span> <span class="kw">val</span> C5 = Cyclic(<span class="num">5</span>)
+  <span class="num">3</span> |+| <span class="num">4</span> <span class="cmt">// 1</span>
+}</pre></span></dd></dl></div>
+    </li><li name="agecaf.morealgebra.groups.FromSpire" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="FromSpireextendsGroupSyntaxwithEqSyntax"></a>
+      <a id="FromSpire:FromSpire"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="FromSpire.html"><span class="name">FromSpire</span></a><span class="result"> extends <span class="extype" name="spire.syntax.GroupSyntax">GroupSyntax</span> with <span class="extype" name="spire.syntax.EqSyntax">EqSyntax</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#agecaf.morealgebra.groups.package@FromSpireextendsGroupSyntaxwithEqSyntax" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Syntax imported from Spire.</p><div class="fullcomment"><div class="comment cmt"><p>Syntax imported from Spire.</p><p>Includes <a href="https://github.com/non/spire#semigroup-monoid-and-group" target="_blank">GroupSyntax</a>
+and <a href="https://github.com/non/spire#eq-order-and-partialorder" target="_blank">EqSyntax</a>.
+</p></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>This can be individually imported with <code>import agecaf.morealgebra.groups.GroupSyntax._</code></p></span></dd></dl></div>
+    </li><li name="agecaf.morealgebra.groups.GroupDirectProduct" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="GroupDirectProductextendsAnyRef"></a>
+      <a id="GroupDirectProduct:GroupDirectProduct"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="GroupDirectProduct.html"><span class="name">GroupDirectProduct</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#agecaf.morealgebra.groups.package@GroupDirectProductextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Direct Product of two Groups.</p><div class="fullcomment"><div class="comment cmt"><p>Direct Product of two Groups.
+</p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="https://en.wikipedia.org/wiki/Direct_product_of_groups" target="_blank">Direct Product (Groups)</a></p><h3>Use</h3><pre><span class="cmt">// Minimal Imports</span>
+<span class="cmt">// import agecaf.morealgebra.groups.GroupSyntax._</span>
+<span class="cmt">// import agecaf.morealgebra.groups.GroupDirectProduct._</span>
+<span class="cmt">// And whatever groups you're using.</span>
+<span class="cmt">// Alternatively</span>
+<span class="kw">import</span> agecaf.morealgebra.groups._
+{
+  <span class="kw">implicit</span> <span class="kw">val</span> G = DirectProduct(Int_+, Double_*)
+  <span class="cmt">// Alternatively</span>
+  <span class="cmt">// implicit val G = Int_+ directProduct Double_*</span>
+  <span class="cmt">// implicit val G = Int_+ × Double_* // Latex `\times`, not `x`</span>
+  (<span class="num">1</span>, <span class="num">2.0</span>) |+| (-<span class="num">2</span>, <span class="num">3.0</span>)   <span class="cmt">// (-1, 6.0)</span>
+  (<span class="num">1</span>, <span class="num">2.0</span>) |-| (-<span class="num">2</span>, <span class="num">4.0</span>)   <span class="cmt">// (3, 0.5)</span>
+  (<span class="num">1</span>, <span class="num">2.0</span>).inverse         <span class="cmt">// (-1, 0.5)</span>
+  G.id                     <span class="cmt">// (0, 1.0)</span>
+}</pre></span></dd></dl></div>
+    </li><li name="agecaf.morealgebra.groups.GroupSemidirectProduct" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="GroupSemidirectProductextendsAnyRef"></a>
+      <a id="GroupSemidirectProduct:GroupSemidirectProduct"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="GroupSemidirectProduct.html"><span class="name">GroupSemidirectProduct</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#agecaf.morealgebra.groups.package@GroupSemidirectProductextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="agecaf.morealgebra.groups.Standard" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="StandardextendsAnyRef"></a>
+      <a id="Standard:Standard"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="Standard.html"><span class="name">Standard</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#agecaf.morealgebra.groups.package@StandardextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Collection of Standard groups.</p>
+    </li><li name="agecaf.morealgebra.groups.GroupDirectProduct.WithGroupDirectProduct" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="WithGroupDirectProduct[A]extendsAnyRef"></a>
+      <a id="WithGroupDirectProduct[A]:WithGroupDirectProduct[A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="GroupDirectProduct$WithGroupDirectProduct.html"><span class="name">WithGroupDirectProduct</span></a><span class="tparams">[<span name="A">A</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#agecaf.morealgebra.groups.GroupDirectProduct@WithGroupDirectProduct[A]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Direct Product syntax sugar for Groups.</p><div class="fullcomment"><div class="comment cmt"><p>Direct Product syntax sugar for Groups.
+</p></div><dl class="paramcmts block"><dt class="tparam">A</dt><dd class="cmt"><p>Type on which lhs acts on.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="GroupDirectProduct.html" class="extype" name="agecaf.morealgebra.groups.GroupDirectProduct">GroupDirectProduct</a></dd></dl></div>
+    </li><li name="agecaf.morealgebra.groups.GroupSemidirectProduct.WithGroupSemidirectProduct" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="WithGroupSemidirectProduct[N]extendsAnyRef"></a>
+      <a id="WithGroupSemidirectProduct[N]:WithGroupSemidirectProduct[N]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="GroupSemidirectProduct$WithGroupSemidirectProduct.html"><span class="name">WithGroupSemidirectProduct</span></a><span class="tparams">[<span name="N">N</span>]</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#agecaf.morealgebra.groups.GroupSemidirectProduct@WithGroupSemidirectProduct[N]extendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="GroupSemidirectProduct.html" class="extype" name="agecaf.morealgebra.groups.GroupSemidirectProduct">GroupSemidirectProduct</a></dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="agecaf.morealgebra.groups.Standard#BigInt_+" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="BigInt_+:spire.algebra.AbGroup[BigInt]"></a>
+      <a id="BigInt_+:AbGroup[BigInt]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: BigInt_$plus" class="name">BigInt_+</span><span class="result">: <span class="extype" name="spire.algebra.AbGroup">AbGroup</span>[<span class="extype" name="scala.BigInt">BigInt</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#agecaf.morealgebra.groups.package@BigInt_+:spire.algebra.AbGroup[BigInt]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Standard.html" class="extype" name="agecaf.morealgebra.groups.Standard">Standard</a></dd></dl></div>
+    </li><li name="agecaf.morealgebra.groups.Cyclic" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Cyclic"></a>
+      <a id="Cyclic:Cyclic"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Cyclic$.html"><span class="name">Cyclic</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#agecaf.morealgebra.groups.package@Cyclic" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Factory for Cyclic Groups.</p><div class="fullcomment"><div class="comment cmt"><p>Factory for Cyclic Groups.
+</p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="Cyclic.html" class="extype" name="agecaf.morealgebra.groups.Cyclic">Cyclic</a></p></span></dd></dl></div>
+    </li><li name="agecaf.morealgebra.groups.GroupDirectProduct#DirectProduct" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="DirectProduct[A,B](lhs:spire.algebra.Group[A],rhs:spire.algebra.Group[B]):spire.algebra.Group[(A,B)]"></a>
+      <a id="DirectProduct[A,B](Group[A],Group[B]):Group[(A,B)]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">DirectProduct</span><span class="tparams">[<span name="A">A</span>, <span name="B">B</span>]</span><span class="params">(<span name="lhs">lhs: <span class="extype" name="spire.algebra.Group">Group</span>[<span class="extype" name="agecaf.morealgebra.groups.GroupDirectProduct.DirectProduct.A">A</span>]</span>, <span name="rhs">rhs: <span class="extype" name="spire.algebra.Group">Group</span>[<span class="extype" name="agecaf.morealgebra.groups.GroupDirectProduct.DirectProduct.B">B</span>]</span>)</span><span class="result">: <span class="extype" name="spire.algebra.Group">Group</span>[(<span class="extype" name="agecaf.morealgebra.groups.GroupDirectProduct.DirectProduct.A">A</span>, <span class="extype" name="agecaf.morealgebra.groups.GroupDirectProduct.DirectProduct.B">B</span>)]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#agecaf.morealgebra.groups.package@DirectProduct[A,B](lhs:spire.algebra.Group[A],rhs:spire.algebra.Group[B]):spire.algebra.Group[(A,B)]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The Direct product of two Groups.</p><div class="fullcomment"><div class="comment cmt"><p>The Direct product of two Groups.</p><p>See <a href="GroupDirectProduct.html" class="extype" name="agecaf.morealgebra.groups.GroupDirectProduct">GroupDirectProduct</a>
+</p></div><dl class="paramcmts block"><dt class="tparam">A</dt><dd class="cmt"><p>Type on which lhs acts on.</p></dd><dt class="tparam">B</dt><dd class="cmt"><p>Type on which rhs acts on.</p></dd><dt class="param">lhs</dt><dd class="cmt"><p>Left Hand Side Group.</p></dd><dt class="param">rhs</dt><dd class="cmt"><p>Right Hand Side Group.</p></dd><dt>returns</dt><dd class="cmt"><p>the Direct Product as a Group[(A, B)].</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="GroupDirectProduct.html" class="extype" name="agecaf.morealgebra.groups.GroupDirectProduct">GroupDirectProduct</a></dd></dl></div>
+    </li><li name="agecaf.morealgebra.groups.Standard#Double_*" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Double_*:spire.algebra.AbGroup[Double]"></a>
+      <a id="Double_*:AbGroup[Double]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: Double_$times" class="name">Double_*</span><span class="result">: <span class="extype" name="spire.algebra.AbGroup">AbGroup</span>[<span class="extype" name="scala.Double">Double</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#agecaf.morealgebra.groups.package@Double_*:spire.algebra.AbGroup[Double]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Standard.html" class="extype" name="agecaf.morealgebra.groups.Standard">Standard</a></dd></dl></div>
+    </li><li name="agecaf.morealgebra.groups.Standard#Double_+" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Double_+:spire.algebra.AbGroup[Double]"></a>
+      <a id="Double_+:AbGroup[Double]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: Double_$plus" class="name">Double_+</span><span class="result">: <span class="extype" name="spire.algebra.AbGroup">AbGroup</span>[<span class="extype" name="scala.Double">Double</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#agecaf.morealgebra.groups.package@Double_+:spire.algebra.AbGroup[Double]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Standard.html" class="extype" name="agecaf.morealgebra.groups.Standard">Standard</a></dd></dl></div>
+    </li><li name="agecaf.morealgebra.groups.GroupDirectProduct" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GroupDirectProduct"></a>
+      <a id="GroupDirectProduct:GroupDirectProduct"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="GroupDirectProduct$.html"><span class="name">GroupDirectProduct</span></a><span class="result"> extends <a href="GroupDirectProduct.html" class="extype" name="agecaf.morealgebra.groups.GroupDirectProduct">GroupDirectProduct</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#agecaf.morealgebra.groups.package@GroupDirectProduct" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Import helper for <a href="GroupDirectProduct.html" class="extype" name="agecaf.morealgebra.groups.GroupDirectProduct">GroupDirectProduct</a>.</p>
+    </li><li name="agecaf.morealgebra.groups.GroupSyntax" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="GroupSyntax"></a>
+      <a id="GroupSyntax:GroupSyntax"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="GroupSyntax$.html"><span class="name">GroupSyntax</span></a><span class="result"> extends <a href="FromSpire.html" class="extype" name="agecaf.morealgebra.groups.FromSpire">FromSpire</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#agecaf.morealgebra.groups.package@GroupSyntax" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Syntax for groups.</p><div class="fullcomment"><div class="comment cmt"><p>Syntax for groups.
+</p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="FromSpire.html" class="extype" name="agecaf.morealgebra.groups.FromSpire">FromSpire</a></p></span></dd></dl></div>
+    </li><li name="agecaf.morealgebra.groups.Standard#Int_+" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Int_+:spire.algebra.AbGroup[Int]"></a>
+      <a id="Int_+:AbGroup[Int]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: Int_$plus" class="name">Int_+</span><span class="result">: <span class="extype" name="spire.algebra.AbGroup">AbGroup</span>[<span class="extype" name="scala.Int">Int</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#agecaf.morealgebra.groups.package@Int_+:spire.algebra.AbGroup[Int]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Standard.html" class="extype" name="agecaf.morealgebra.groups.Standard">Standard</a></dd></dl></div>
+    </li><li name="agecaf.morealgebra.groups.Standard#Long_+" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Long_+:spire.algebra.AbGroup[Long]"></a>
+      <a id="Long_+:AbGroup[Long]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: Long_$plus" class="name">Long_+</span><span class="result">: <span class="extype" name="spire.algebra.AbGroup">AbGroup</span>[<span class="extype" name="scala.Long">Long</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#agecaf.morealgebra.groups.package@Long_+:spire.algebra.AbGroup[Long]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Standard.html" class="extype" name="agecaf.morealgebra.groups.Standard">Standard</a></dd></dl></div>
+    </li><li name="agecaf.morealgebra.groups.GroupSemidirectProduct#SemidirectProduct" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="SemidirectProduct[N,H](N:spire.algebra.Group[N],H:spire.algebra.Group[H],f:H=&gt;(N=&gt;N)):spire.algebra.Group[(N,H)]"></a>
+      <a id="SemidirectProduct[N,H](Group[N],Group[H],(H)⇒(N)⇒N):Group[(N,H)]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">SemidirectProduct</span><span class="tparams">[<span name="N">N</span>, <span name="H">H</span>]</span><span class="params">(<span name="N">N: <span class="extype" name="spire.algebra.Group">Group</span>[<span class="extype" name="agecaf.morealgebra.groups.GroupSemidirectProduct.SemidirectProduct.N">N</span>]</span>, <span name="H">H: <span class="extype" name="spire.algebra.Group">Group</span>[<span class="extype" name="agecaf.morealgebra.groups.GroupSemidirectProduct.SemidirectProduct.H">H</span>]</span>, <span name="f">f: (<span class="extype" name="agecaf.morealgebra.groups.GroupSemidirectProduct.SemidirectProduct.H">H</span>) ⇒ (<span class="extype" name="agecaf.morealgebra.groups.GroupSemidirectProduct.SemidirectProduct.N">N</span>) ⇒ <span class="extype" name="agecaf.morealgebra.groups.GroupSemidirectProduct.SemidirectProduct.N">N</span></span>)</span><span class="result">: <span class="extype" name="spire.algebra.Group">Group</span>[(<span class="extype" name="agecaf.morealgebra.groups.GroupSemidirectProduct.SemidirectProduct.N">N</span>, <span class="extype" name="agecaf.morealgebra.groups.GroupSemidirectProduct.SemidirectProduct.H">H</span>)]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#agecaf.morealgebra.groups.package@SemidirectProduct[N,H](N:spire.algebra.Group[N],H:spire.algebra.Group[H],f:H=&gt;(N=&gt;N)):spire.algebra.Group[(N,H)]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="GroupSemidirectProduct.html" class="extype" name="agecaf.morealgebra.groups.GroupSemidirectProduct">GroupSemidirectProduct</a></dd></dl></div>
+    </li><li name="spire.syntax.EqSyntax#eqOps" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eqOps[A](a:A)(implicitevidence$1:spire.algebra.Eq[A]):spire.syntax.EqOps[A]"></a>
+      <a id="eqOps[A](A)(Eq[A]):EqOps[A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eqOps</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="a">a: <span class="extype" name="spire.syntax.EqSyntax.eqOps.A">A</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <span class="extype" name="spire.algebra.Eq">Eq</span>[<span class="extype" name="spire.syntax.EqSyntax.eqOps.A">A</span>]</span>)</span><span class="result">: <span class="extype" name="spire.syntax.EqOps">EqOps</span>[<span class="extype" name="spire.syntax.EqSyntax.eqOps.A">A</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#agecaf.morealgebra.groups.package@eqOps[A](a:A)(implicitevidence$1:spire.algebra.Eq[A]):spire.syntax.EqOps[A]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>EqSyntax</dd></dl></div>
+    </li><li name="spire.syntax.GroupSyntax#groupOps" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="groupOps[A](a:A)(implicitevidence$8:spire.algebra.Group[A]):spire.syntax.GroupOps[A]"></a>
+      <a id="groupOps[A](A)(Group[A]):GroupOps[A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">groupOps</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="a">a: <span class="extype" name="spire.syntax.GroupSyntax.groupOps.A">A</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <span class="extype" name="spire.algebra.Group">Group</span>[<span class="extype" name="spire.syntax.GroupSyntax.groupOps.A">A</span>]</span>)</span><span class="result">: <span class="extype" name="spire.syntax.GroupOps">GroupOps</span>[<span class="extype" name="spire.syntax.GroupSyntax.groupOps.A">A</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#agecaf.morealgebra.groups.package@groupOps[A](a:A)(implicitevidence$8:spire.algebra.Group[A]):spire.syntax.GroupOps[A]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>GroupSyntax</dd></dl></div>
+    </li><li name="spire.syntax.MonoidSyntax#monoidOps" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="monoidOps[A](a:A)(implicitev:spire.algebra.Monoid[A]):spire.syntax.MonoidOps[A]"></a>
+      <a id="monoidOps[A](A)(Monoid[A]):MonoidOps[A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">monoidOps</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="a">a: <span class="extype" name="spire.syntax.MonoidSyntax.monoidOps.A">A</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <span class="extype" name="spire.algebra.Monoid">Monoid</span>[<span class="extype" name="spire.syntax.MonoidSyntax.monoidOps.A">A</span>]</span>)</span><span class="result">: <span class="extype" name="spire.syntax.MonoidOps">MonoidOps</span>[<span class="extype" name="spire.syntax.MonoidSyntax.monoidOps.A">A</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#agecaf.morealgebra.groups.package@monoidOps[A](a:A)(implicitev:spire.algebra.Monoid[A]):spire.syntax.MonoidOps[A]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>MonoidSyntax</dd></dl></div>
+    </li><li name="spire.syntax.SemigroupSyntax#semigroupOps" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="semigroupOps[A](a:A)(implicitevidence$7:spire.algebra.Semigroup[A]):spire.syntax.SemigroupOps[A]"></a>
+      <a id="semigroupOps[A](A)(Semigroup[A]):SemigroupOps[A]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">implicit </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">semigroupOps</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="a">a: <span class="extype" name="spire.syntax.SemigroupSyntax.semigroupOps.A">A</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <span class="extype" name="spire.algebra.Semigroup">Semigroup</span>[<span class="extype" name="spire.syntax.SemigroupSyntax.semigroupOps.A">A</span>]</span>)</span><span class="result">: <span class="extype" name="spire.syntax.SemigroupOps">SemigroupOps</span>[<span class="extype" name="spire.syntax.SemigroupSyntax.semigroupOps.A">A</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#agecaf.morealgebra.groups.package@semigroupOps[A](a:A)(implicitevidence$7:spire.algebra.Semigroup[A]):spire.syntax.SemigroupOps[A]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>SemigroupSyntax</dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="agecaf.morealgebra.groups.GroupSemidirectProduct">
+              <h3>Inherited from <a href="GroupSemidirectProduct.html" class="extype" name="agecaf.morealgebra.groups.GroupSemidirectProduct">GroupSemidirectProduct</a></h3>
+            </div><div class="parent" name="agecaf.morealgebra.groups.GroupDirectProduct">
+              <h3>Inherited from <a href="GroupDirectProduct.html" class="extype" name="agecaf.morealgebra.groups.GroupDirectProduct">GroupDirectProduct</a></h3>
+            </div><div class="parent" name="agecaf.morealgebra.groups.Standard">
+              <h3>Inherited from <a href="Standard.html" class="extype" name="agecaf.morealgebra.groups.Standard">Standard</a></h3>
+            </div><div class="parent" name="agecaf.morealgebra.groups.FromSpire">
+              <h3>Inherited from <a href="FromSpire.html" class="extype" name="agecaf.morealgebra.groups.FromSpire">FromSpire</a></h3>
+            </div><div class="parent" name="spire.syntax.EqSyntax">
+              <h3>Inherited from <span class="extype" name="spire.syntax.EqSyntax">EqSyntax</span></h3>
+            </div><div class="parent" name="spire.syntax.GroupSyntax">
+              <h3>Inherited from <span class="extype" name="spire.syntax.GroupSyntax">GroupSyntax</span></h3>
+            </div><div class="parent" name="spire.syntax.MonoidSyntax">
+              <h3>Inherited from <span class="extype" name="spire.syntax.MonoidSyntax">MonoidSyntax</span></h3>
+            </div><div class="parent" name="spire.syntax.SemigroupSyntax">
+              <h3>Inherited from <span class="extype" name="spire.syntax.SemigroupSyntax">SemigroupSyntax</span></h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>
