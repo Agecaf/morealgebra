@@ -7,4 +7,4 @@ libraryDependencies ++= Seq(
 
 scalacOptions in (Compile, doc) ++= Seq("-doc-root-content", baseDirectory.value+"/root-doc.scala")
 
-target in Compile in doc := baseDirectory.value / "api"
+target in Compile in doc := baseDirectory.value / "docs"
