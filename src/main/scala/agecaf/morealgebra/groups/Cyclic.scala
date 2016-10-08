@@ -37,14 +37,14 @@ import spire.algebra._
   *     1 =!= 2 // true
   *
   *     // Due to operator precedence, the parentheses are unfortunately required.
-  *     (1 |+| 1) === 2 // true
+  *     (2 |+| 2) === 1 // true
   *   }
   *
   *   {
   *     // Use blocks to use different implicit groups.
   *     implicit val C5 = Cyclic(5)
   *
-  *     3 |+| 4 // 1
+  *     3 |+| 4 // 2
   *   }
   * }}}
   *

@@ -71,12 +71,12 @@
   <span class="num">4</span> === <span class="num">1</span> <span class="cmt">// true</span>
   <span class="num">1</span> =!= <span class="num">2</span> <span class="cmt">// true</span>
   <span class="cmt">// Due to operator precedence, the parentheses are unfortunately required.</span>
-  (<span class="num">1</span> |+| <span class="num">1</span>) === <span class="num">2</span> <span class="cmt">// true</span>
+  (<span class="num">2</span> |+| <span class="num">2</span>) === <span class="num">1</span> <span class="cmt">// true</span>
 }
 {
   <span class="cmt">// Use blocks to use different implicit groups.</span>
   <span class="kw">implicit</span> <span class="kw">val</span> C5 = Cyclic(<span class="num">5</span>)
-  <span class="num">3</span> |+| <span class="num">4</span> <span class="cmt">// 1</span>
+  <span class="num">3</span> |+| <span class="num">4</span> <span class="cmt">// 2</span>
 }</pre></span></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="spire.algebra.Eq">Eq</span>[<span class="extype" name="scala.Int">Int</span>], <span class="extype" name="spire.algebra.AbGroup">AbGroup</span>[<span class="extype" name="scala.Int">Int</span>], <span class="extype" name="spire.algebra.CMonoid">CMonoid</span>[<span class="extype" name="scala.Int">Int</span>], <span class="extype" name="spire.algebra.CSemigroup">CSemigroup</span>[<span class="extype" name="scala.Int">Int</span>], <span class="extype" name="spire.algebra.Group">Group</span>[<span class="extype" name="scala.Int">Int</span>], <span class="extype" name="spire.algebra.Monoid">Monoid</span>[<span class="extype" name="scala.Int">Int</span>], <span class="extype" name="spire.algebra.Semigroup">Semigroup</span>[<span class="extype" name="scala.Int">Int</span>], <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>

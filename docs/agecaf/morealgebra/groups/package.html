@@ -130,12 +130,12 @@ syntax from Spire, so that further imports are not required.</p><h3>Implicits</h
   <span class="num">4</span> === <span class="num">1</span> <span class="cmt">// true</span>
   <span class="num">1</span> =!= <span class="num">2</span> <span class="cmt">// true</span>
   <span class="cmt">// Due to operator precedence, the parentheses are unfortunately required.</span>
-  (<span class="num">1</span> |+| <span class="num">1</span>) === <span class="num">2</span> <span class="cmt">// true</span>
+  (<span class="num">2</span> |+| <span class="num">2</span>) === <span class="num">1</span> <span class="cmt">// true</span>
 }
 {
   <span class="cmt">// Use blocks to use different implicit groups.</span>
   <span class="kw">implicit</span> <span class="kw">val</span> C5 = Cyclic(<span class="num">5</span>)
-  <span class="num">3</span> |+| <span class="num">4</span> <span class="cmt">// 1</span>
+  <span class="num">3</span> |+| <span class="num">4</span> <span class="cmt">// 2</span>
 }</pre></span></dd></dl></div>
     </li><li name="agecaf.morealgebra.groups.FromSpire" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
       <a id="FromSpireextendsGroupSyntaxwithEqSyntax"></a>
@@ -189,7 +189,7 @@ and <a href="https://github.com/non/spire#eq-order-and-partialorder" target="_bl
   (<span class="num">1</span>, <span class="num">2.0</span>).inverse         <span class="cmt">// (-1, 0.5)</span>
   G.id                     <span class="cmt">// (0, 1.0)</span>
 }</pre></span></dd></dl></div>
-    </li><li name="agecaf.morealgebra.groups.GroupSemidirectProduct" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+    </li><li name="agecaf.morealgebra.groups.GroupSemidirectProduct" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
       <a id="GroupSemidirectProductextendsAnyRef"></a>
       <a id="GroupSemidirectProduct:GroupSemidirectProduct"></a>
       <h4 class="signature">
@@ -205,7 +205,25 @@ and <a href="https://github.com/non/spire#eq-order-and-partialorder" target="_bl
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      
+      <p class="shortcomment cmt">Semidirect Product of two Groups N, H, given the homomorphism H =&gt; End(N)
+</p><div class="fullcomment"><div class="comment cmt"><p>Semidirect Product of two Groups N, H, given the homomorphism H =&gt; End(N)
+</p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="https://en.wikipedia.org/wiki/Semidirect_product" target="_blank">Semidirect Product (Wikipedia)</a></p><h3>Use</h3><pre><span class="cmt">// Minimal Imports</span>
+<span class="cmt">// import agecaf.morealgebra.groups.GroupSyntax._</span>
+<span class="cmt">// import agecaf.morealgebra.groups.GroupSemidirectProduct._</span>
+<span class="cmt">// And whatever groups you're using.</span>
+<span class="cmt">// Alternatively</span>
+<span class="kw">import</span> agecaf.morealgebra.groups._
+{
+  <span class="kw">val</span> ϕ = {(h: <span class="std">Double</span>) <span class="kw">=&gt;</span> (n: <span class="std">Double</span>) <span class="kw">=&gt;</span> h * n}
+  <span class="kw">implicit</span> <span class="kw">val</span> G = SemidirectProduct(Double_+, Double_*, ϕ)
+  <span class="cmt">// Alternatively</span>
+  <span class="cmt">// implicit val G = Int_+ semidirectProduct (Double_*, ϕ)</span>
+  <span class="cmt">// implicit val G = Int_+ ⋊ (Double_*, ϕ) // Latex `\rtimes`</span>
+  (<span class="num">1.0</span>, <span class="num">2.0</span>) |+| (<span class="num">3.0</span>, <span class="num">4.0</span>)   <span class="cmt">// (1 + 2 * 3, 2 * 4) = (7.0, 6.0)</span>
+  (<span class="num">1.0</span>, <span class="num">2.0</span>) |-| (<span class="num">3.0</span>, <span class="num">4.0</span>)   <span class="cmt">// (1.0, 2.0) |+| (3.0, 4.0).inverse</span>
+  (<span class="num">1.0</span>, <span class="num">2.0</span>).inverse          <span class="cmt">// (-0.5, 0.5)</span>
+  G.id                        <span class="cmt">// (0.0, 1.0)</span>
+}</pre></span></dd></dl></div>
     </li><li name="agecaf.morealgebra.groups.Standard" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="StandardextendsAnyRef"></a>
       <a id="Standard:Standard"></a>
@@ -257,7 +275,8 @@ and <a href="https://github.com/non/spire#eq-order-and-partialorder" target="_bl
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="GroupSemidirectProduct.html" class="extype" name="agecaf.morealgebra.groups.GroupSemidirectProduct">GroupSemidirectProduct</a></dd></dl></div>
+      <p class="shortcomment cmt">Semidirect Product syntax sugar for Groups.</p><div class="fullcomment"><div class="comment cmt"><p>Semidirect Product syntax sugar for Groups.
+</p></div><dl class="paramcmts block"><dt class="tparam">N</dt><dd class="cmt"><p>Type on which N acts on.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="GroupSemidirectProduct.html" class="extype" name="agecaf.morealgebra.groups.GroupSemidirectProduct">GroupSemidirectProduct</a></dd></dl></div>
     </li></ol>
             </div>
 
@@ -265,24 +284,7 @@ and <a href="https://github.com/non/spire#eq-order-and-partialorder" target="_bl
 
         <div id="values" class="values members">
               <h3>Value Members</h3>
-              <ol><li name="agecaf.morealgebra.groups.Standard#BigInt_+" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="BigInt_+:spire.algebra.AbGroup[BigInt]"></a>
-      <a id="BigInt_+:AbGroup[BigInt]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span title="gt4s: BigInt_$plus" class="name">BigInt_+</span><span class="result">: <span class="extype" name="spire.algebra.AbGroup">AbGroup</span>[<span class="extype" name="scala.BigInt">BigInt</span>]</span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../index.html#agecaf.morealgebra.groups.package@BigInt_+:spire.algebra.AbGroup[BigInt]" title="Permalink" target="_top">
-        <img src="../../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Standard.html" class="extype" name="agecaf.morealgebra.groups.Standard">Standard</a></dd></dl></div>
-    </li><li name="agecaf.morealgebra.groups.Cyclic" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+              <ol><li name="agecaf.morealgebra.groups.Cyclic" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="Cyclic"></a>
       <a id="Cyclic:Cyclic"></a>
       <h4 class="signature">
@@ -369,6 +371,23 @@ and <a href="https://github.com/non/spire#eq-order-and-partialorder" target="_bl
       </a>
     </span>
       <p class="shortcomment cmt">Import helper for <a href="GroupDirectProduct.html" class="extype" name="agecaf.morealgebra.groups.GroupDirectProduct">GroupDirectProduct</a>.</p>
+    </li><li name="agecaf.morealgebra.groups.GroupSemidirectProduct" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="GroupSemidirectProduct"></a>
+      <a id="GroupSemidirectProduct:GroupSemidirectProduct"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="GroupSemidirectProduct$.html"><span class="name">GroupSemidirectProduct</span></a><span class="result"> extends <a href="GroupSemidirectProduct.html" class="extype" name="agecaf.morealgebra.groups.GroupSemidirectProduct">GroupSemidirectProduct</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#agecaf.morealgebra.groups.package@GroupSemidirectProduct" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Import helper for <a href="GroupSemidirectProduct.html" class="extype" name="agecaf.morealgebra.groups.GroupSemidirectProduct">GroupSemidirectProduct</a>.</p>
     </li><li name="agecaf.morealgebra.groups.GroupSyntax" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="GroupSyntax"></a>
       <a id="GroupSyntax:GroupSyntax"></a>
@@ -404,23 +423,6 @@ and <a href="https://github.com/non/spire#eq-order-and-partialorder" target="_bl
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Standard.html" class="extype" name="agecaf.morealgebra.groups.Standard">Standard</a></dd></dl></div>
-    </li><li name="agecaf.morealgebra.groups.Standard#Long_+" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="Long_+:spire.algebra.AbGroup[Long]"></a>
-      <a id="Long_+:AbGroup[Long]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span title="gt4s: Long_$plus" class="name">Long_+</span><span class="result">: <span class="extype" name="spire.algebra.AbGroup">AbGroup</span>[<span class="extype" name="scala.Long">Long</span>]</span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../index.html#agecaf.morealgebra.groups.package@Long_+:spire.algebra.AbGroup[Long]" title="Permalink" target="_top">
-        <img src="../../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Standard.html" class="extype" name="agecaf.morealgebra.groups.Standard">Standard</a></dd></dl></div>
     </li><li name="agecaf.morealgebra.groups.GroupSemidirectProduct#SemidirectProduct" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="SemidirectProduct[N,H](N:spire.algebra.Group[N],H:spire.algebra.Group[H],f:H=&gt;(N=&gt;N)):spire.algebra.Group[(N,H)]"></a>
       <a id="SemidirectProduct[N,H](Group[N],Group[H],(H)⇒(N)⇒N):Group[(N,H)]"></a>
@@ -437,7 +439,10 @@ and <a href="https://github.com/non/spire#eq-order-and-partialorder" target="_bl
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="GroupSemidirectProduct.html" class="extype" name="agecaf.morealgebra.groups.GroupSemidirectProduct">GroupSemidirectProduct</a></dd></dl></div>
+      <p class="shortcomment cmt">The Direct product of two Groups.</p><div class="fullcomment"><div class="comment cmt"><p>The Direct product of two Groups.</p><p>See <a href="GroupSemidirectProduct.html" class="extype" name="agecaf.morealgebra.groups.GroupSemidirectProduct">GroupSemidirectProduct</a>
+</p></div><dl class="paramcmts block"><dt class="tparam">N</dt><dd class="cmt"><p>Type on which N acts on.</p></dd><dt class="tparam">H</dt><dd class="cmt"><p>Type on which H acts on.</p></dd><dt class="param">N</dt><dd class="cmt"><p>Left Hand Side Group, will be the normal subgroup of the semi product.</p></dd><dt class="param">H</dt><dd class="cmt"><p>Right Hand Side Group.</p></dd><dt class="param">f</dt><dd class="cmt"><p>The homomorphism from H to End(N).
+         This is a function {(h: H) =&gt; (n: N) =&gt; ???}.
+         It should be an appropriate homomorphism.</p></dd><dt>returns</dt><dd class="cmt"><p>the Semidirect Product as a Group[(N, H)].</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="GroupSemidirectProduct.html" class="extype" name="agecaf.morealgebra.groups.GroupSemidirectProduct">GroupSemidirectProduct</a></dd></dl></div>
     </li><li name="spire.syntax.EqSyntax#eqOps" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eqOps[A](a:A)(implicitevidence$1:spire.algebra.Eq[A]):spire.syntax.EqOps[A]"></a>
       <a id="eqOps[A](A)(Eq[A]):EqOps[A]"></a>

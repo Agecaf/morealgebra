@@ -28,10 +28,12 @@
         </head>
         <body class="type">
       <div id="definition">
-        <img alt="Trait" src="../../../lib/trait_big.png" />
+        <a href="GroupSemidirectProduct$.html" title="See companion object"><img alt="Trait/Object" src="../../../lib/trait_to_object_big.png" /></a>
         <p id="owner"><a href="../../package.html" class="extype" name="agecaf">agecaf</a>.<a href="../package.html" class="extype" name="agecaf.morealgebra">morealgebra</a>.<a href="package.html" class="extype" name="agecaf.morealgebra.groups">groups</a></p>
-        <h1>GroupSemidirectProduct</h1><h3><span class="morelinks"><div>Related Doc:
-            <a href="package.html" class="extype" name="agecaf.morealgebra.groups">package groups</a>
+        <h1><a href="GroupSemidirectProduct$.html" title="See companion object">GroupSemidirectProduct</a></h1><h3><span class="morelinks"><div>
+            Related Docs:
+            <a href="GroupSemidirectProduct$.html" title="See companion object">object GroupSemidirectProduct</a>
+            | <a href="package.html" class="extype" name="agecaf.morealgebra.groups">package groups</a>
           </div></span></h3><span class="permalink">
       <a href="../../../index.html#agecaf.morealgebra.groups.GroupSemidirectProduct" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
@@ -49,10 +51,30 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Semidirect Product of two Groups N, H, given the homomorphism H =&gt; End(N)
+</p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="https://en.wikipedia.org/wiki/Semidirect_product" target="_blank">Semidirect Product (Wikipedia)</a></p><h3>Use</h3><pre><span class="cmt">// Minimal Imports</span>
+<span class="cmt">// import agecaf.morealgebra.groups.GroupSyntax._</span>
+<span class="cmt">// import agecaf.morealgebra.groups.GroupSemidirectProduct._</span>
+<span class="cmt">// And whatever groups you're using.</span>
+<span class="cmt">// Alternatively</span>
+<span class="kw">import</span> agecaf.morealgebra.groups._
+{
+  <span class="kw">val</span> ϕ = {(h: <span class="std">Double</span>) <span class="kw">=&gt;</span> (n: <span class="std">Double</span>) <span class="kw">=&gt;</span> h * n}
+  <span class="kw">implicit</span> <span class="kw">val</span> G = SemidirectProduct(Double_+, Double_*, ϕ)
+  <span class="cmt">// Alternatively</span>
+  <span class="cmt">// implicit val G = Int_+ semidirectProduct (Double_*, ϕ)</span>
+  <span class="cmt">// implicit val G = Int_+ ⋊ (Double_*, ϕ) // Latex `\rtimes`</span>
+  (<span class="num">1.0</span>, <span class="num">2.0</span>) |+| (<span class="num">3.0</span>, <span class="num">4.0</span>)   <span class="cmt">// (1 + 2 * 3, 2 * 4) = (7.0, 6.0)</span>
+  (<span class="num">1.0</span>, <span class="num">2.0</span>) |-| (<span class="num">3.0</span>, <span class="num">4.0</span>)   <span class="cmt">// (1.0, 2.0) |+| (3.0, 4.0).inverse</span>
+  (<span class="num">1.0</span>, <span class="num">2.0</span>).inverse          <span class="cmt">// (-0.5, 0.5)</span>
+  G.id                        <span class="cmt">// (0.0, 1.0)</span>
+}</pre></span></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
-        </div></div>
+        </div><div class="toggleContainer block">
+            <span class="toggle">Known Subclasses</span>
+            <div class="subClasses hiddenContent"><a href="GroupSemidirectProduct$.html" class="extype" name="agecaf.morealgebra.groups.GroupSemidirectProduct">GroupSemidirectProduct</a></div>
+          </div></div>
         
 
       <div id="mbrsel">
@@ -90,7 +112,7 @@
 
         <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li name="agecaf.morealgebra.groups.GroupSemidirectProduct.WithGroupSemidirectProduct" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+              <ol><li name="agecaf.morealgebra.groups.GroupSemidirectProduct.WithGroupSemidirectProduct" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="WithGroupSemidirectProduct[N]extendsAnyRef"></a>
       <a id="WithGroupSemidirectProduct[N]:WithGroupSemidirectProduct[N]"></a>
       <h4 class="signature">
@@ -106,7 +128,8 @@
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      
+      <p class="shortcomment cmt">Semidirect Product syntax sugar for Groups.</p><div class="fullcomment"><div class="comment cmt"><p>Semidirect Product syntax sugar for Groups.
+</p></div><dl class="paramcmts block"><dt class="tparam">N</dt><dd class="cmt"><p>Type on which N acts on.</p></dd></dl></div>
     </li></ol>
             </div>
 
@@ -165,7 +188,7 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="agecaf.morealgebra.groups.GroupSemidirectProduct#SemidirectProduct" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="agecaf.morealgebra.groups.GroupSemidirectProduct#SemidirectProduct" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="SemidirectProduct[N,H](N:spire.algebra.Group[N],H:spire.algebra.Group[H],f:H=&gt;(N=&gt;N)):spire.algebra.Group[(N,H)]"></a>
       <a id="SemidirectProduct[N,H](Group[N],Group[H],(H)⇒(N)⇒N):Group[(N,H)]"></a>
       <h4 class="signature">
@@ -181,7 +204,10 @@
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      
+      <p class="shortcomment cmt">The Direct product of two Groups.</p><div class="fullcomment"><div class="comment cmt"><p>The Direct product of two Groups.</p><p>See <a href="" class="extype" name="agecaf.morealgebra.groups.GroupSemidirectProduct">GroupSemidirectProduct</a>
+</p></div><dl class="paramcmts block"><dt class="tparam">N</dt><dd class="cmt"><p>Type on which N acts on.</p></dd><dt class="tparam">H</dt><dd class="cmt"><p>Type on which H acts on.</p></dd><dt class="param">N</dt><dd class="cmt"><p>Left Hand Side Group, will be the normal subgroup of the semi product.</p></dd><dt class="param">H</dt><dd class="cmt"><p>Right Hand Side Group.</p></dd><dt class="param">f</dt><dd class="cmt"><p>The homomorphism from H to End(N).
+         This is a function {(h: H) =&gt; (n: N) =&gt; ???}.
+         It should be an appropriate homomorphism.</p></dd><dt>returns</dt><dd class="cmt"><p>the Semidirect Product as a Group[(N, H)].</p></dd></dl></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
