@@ -1,5 +1,6 @@
 package agecaf.morealgebra.groups
 
+import agecaf.morealgebra.sets.Finite
 import spire.algebra._
 
 /** Cyclic Group structure, on top of Int.
@@ -11,6 +12,8 @@ import spire.algebra._
   *  - Abelian Group.
   *
   *  - Equivalence classes on Int.
+  *
+  *  - Finite on Int.
   *
   * =Use=
   *
@@ -53,7 +56,7 @@ import spire.algebra._
   *       includes an overriding `Eq[Int]` structure.
   *
   */
-class Cyclic(m: Int) extends AbGroup[Int] with Eq[Int] {
+class Cyclic(m: Int) extends AbGroup[Int] with Eq[Int] with Finite[Int] {
   assert(m > 0)
   def op(a: Int, b: Int): Int = {
     val x = (a + b) % m
@@ -62,6 +65,7 @@ class Cyclic(m: Int) extends AbGroup[Int] with Eq[Int] {
   def inverse(a: Int) = op(-a, 0)
   def id: Int = 0
   def eqv(a: Int, b: Int): Boolean = ((a - b) % m) == 0
+  lazy val everything = Range(0, m - 1).toSet
 }
 
 /** Factory for Cyclic Groups.

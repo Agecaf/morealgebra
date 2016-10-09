@@ -4,14 +4,6 @@ import org.scalatest._
 
 class CyclicSpec extends FlatSpec with Matchers with NonImplicitAssertions {
 
-  /*
-    Note: "spire.implicits._" includes implicits for default structures,
-          including a default Eq[Int] structure which clashes with Cyclic's.
-
-          Prefer to use "spire.syntax.all._" instead when using Cyclic groups.
-   */
-  import spire.syntax.all._
-
   behavior of "Cyclic Group operation."
 
   it should "behave as expected for standard values." in {
