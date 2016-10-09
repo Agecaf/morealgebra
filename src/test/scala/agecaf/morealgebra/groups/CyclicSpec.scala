@@ -6,28 +6,30 @@ class CyclicSpec extends FlatSpec with Matchers with NonImplicitAssertions {
 
   behavior of "Cyclic Group operation."
 
+  /* Note: The package agecaf.morealgebra.groups includes implicits for Group and Eq syntax. */
+
   it should "behave as expected for standard values." in {
     {
-      implicit val G = Cyclic(10)
+      implicit val C10 = Cyclic(10)
 
       12 |+| 23 shouldBe 5
     }
 
     {
-      implicit val G = Cyclic(11)
+      implicit val C11 = Cyclic(11)
 
       12 |+| 23 shouldBe 2
     }
 
     {
-      implicit val G = Cyclic(9)
+      implicit val C9 = Cyclic(9)
 
       12 |+| 23 shouldBe 8
     }
   }
 
   it should "behave as expected with negative numbers" in {
-    implicit val G = Cyclic(100)
+    implicit val C100 = Cyclic(100)
 
     // We must be careful to always return the value between 0 and 99,
     // As scala's % operator behaves differently for negative numbers.
@@ -41,21 +43,21 @@ class CyclicSpec extends FlatSpec with Matchers with NonImplicitAssertions {
   "Cyclic Group Equivalence" should "respect modulo." in {
 
     {
-      implicit val G = Cyclic(10)
+      implicit val C10 = Cyclic(10)
 
       assert(1 === 11)
       assert(2 =!= 15)
     }
 
     {
-      implicit val G = Cyclic(5)
+      implicit val C5 = Cyclic(5)
 
       assert(-2 === 8)
       assert(-1 =!= 1)
     }
 
     {
-      implicit val G = Cyclic(13)
+      implicit val C13 = Cyclic(13)
 
       assert(-1 === -14)
       assert(-1 =!= -2)
