@@ -1,9 +1,9 @@
 <!DOCTYPE html >
 <html>
         <head>
-          <title>Cyclic - agecaf.morealgebra.groups.Cyclic</title>
-          <meta name="description" content="Cyclic - agecaf.morealgebra.groups.Cyclic" />
-          <meta name="keywords" content="Cyclic agecaf.morealgebra.groups.Cyclic" />
+          <title>ReducibleQuotient - agecaf.morealgebra.groups.ReducibleQuotient</title>
+          <meta name="description" content="ReducibleQuotient - agecaf.morealgebra.groups.ReducibleQuotient" />
+          <meta name="keywords" content="ReducibleQuotient agecaf.morealgebra.groups.ReducibleQuotient" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
@@ -16,7 +16,7 @@
       <script type="text/javascript">
          if(top === self) {
             var url = '../../../index.html';
-            var hash = 'agecaf.morealgebra.groups.Cyclic';
+            var hash = 'agecaf.morealgebra.groups.ReducibleQuotient';
             var anchor = window.location.hash;
             var anchor_opt = '';
             if (anchor.length >= 1)
@@ -28,14 +28,14 @@
         </head>
         <body class="type">
       <div id="definition">
-        <a href="Cyclic$.html" title="See companion object"><img alt="Class/Object" src="../../../lib/class_to_object_big.png" /></a>
+        <a href="ReducibleQuotient$.html" title="See companion object"><img alt="Trait/Object" src="../../../lib/trait_to_object_big.png" /></a>
         <p id="owner"><a href="../../package.html" class="extype" name="agecaf">agecaf</a>.<a href="../package.html" class="extype" name="agecaf.morealgebra">morealgebra</a>.<a href="package.html" class="extype" name="agecaf.morealgebra.groups">groups</a></p>
-        <h1><a href="Cyclic$.html" title="See companion object">Cyclic</a></h1><h3><span class="morelinks"><div>
+        <h1><a href="ReducibleQuotient$.html" title="See companion object">ReducibleQuotient</a></h1><h3><span class="morelinks"><div>
             Related Docs:
-            <a href="Cyclic$.html" title="See companion object">object Cyclic</a>
+            <a href="ReducibleQuotient$.html" title="See companion object">object ReducibleQuotient</a>
             | <a href="package.html" class="extype" name="agecaf.morealgebra.groups">package groups</a>
           </div></span></h3><span class="permalink">
-      <a href="../../../index.html#agecaf.morealgebra.groups.Cyclic" title="Permalink" target="_top">
+      <a href="../../../index.html#agecaf.morealgebra.groups.ReducibleQuotient" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -44,42 +44,16 @@
       <h4 id="signature" class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">class</span>
+        <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <span class="name">Cyclic</span><span class="result"> extends <span class="extype" name="spire.algebra.AbGroup">AbGroup</span>[<span class="extype" name="scala.Int">Int</span>] with <span class="extype" name="spire.algebra.Eq">Eq</span>[<span class="extype" name="scala.Int">Int</span>] with <a href="../sets/Finite.html" class="extype" name="agecaf.morealgebra.sets.Finite">Finite</a>[<span class="extype" name="scala.Int">Int</span>]</span>
+        <span class="name">ReducibleQuotient</span><span class="tparams">[<span name="A">A</span>]</span><span class="result"> extends <a href="../sets/Reduce.html" class="extype" name="agecaf.morealgebra.sets.Reduce">Reduce</a>[<span class="extype" name="agecaf.morealgebra.groups.ReducibleQuotient.A">A</span>] with <a href="Quotient.html" class="extype" name="agecaf.morealgebra.groups.Quotient">Quotient</a>[<span class="extype" name="agecaf.morealgebra.groups.ReducibleQuotient.A">A</span>]</span>
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Cyclic Group structure, on top of Int.
-</p></div><dl class="attributes block"> <dt>Note</dt><dd><span class="cmt"><p>If you want to use the Cyclic Group's <code>Eq[Int]</code> structure (for modulo
-      congruences), make sure to not import <code>spire.implicits._</code>, as this
-      includes an overriding <code>Eq[Int]</code> structure.</p></span></dd><dt>See also</dt><dd><span class="cmt"><p><a href="https://en.wikipedia.org/wiki/Cyclic_group" target="_blank">Cyclic Groups (Wikipedia)</a></p><h3>Currently supported Structures</h3><ul><li>Abelian Group.</li><li>Equivalence classes on Int.</li><li>Finite on Int.</li></ul><h3>Use</h3><pre><span class="cmt">// Minimal imports</span>
-<span class="kw">import</span> agecaf.morealgebra.groups.GroupSyntax._
-<span class="kw">import</span> agecaf.morealgebra.groups.Cyclic
-<span class="cmt">// Alternatively</span>
-<span class="cmt">// import agecaf.morealgebra.groups._</span>
-{
-  <span class="cmt">// Declare your implicit group!</span>
-  <span class="kw">implicit</span> <span class="kw">val</span> C3 = Cyclic(<span class="num">3</span>) <span class="cmt">// C3: Group[Int] with Eq[Int]</span>
-  <span class="cmt">// Using Group[Int]</span>
-  <span class="num">1</span> |+| <span class="num">2</span>   <span class="cmt">// 3 === 0</span>
-  <span class="num">1</span> |-| <span class="num">2</span>   <span class="cmt">// -1 === 2</span>
-  <span class="num">1.</span>inverse <span class="cmt">// 2</span>
-  C3.id     <span class="cmt">// 0</span>
-  <span class="cmt">// Using Eq[Int]</span>
-  <span class="num">4</span> === <span class="num">1</span> <span class="cmt">// true</span>
-  <span class="num">1</span> =!= <span class="num">2</span> <span class="cmt">// true</span>
-  <span class="cmt">// Due to operator precedence, the parentheses are unfortunately required.</span>
-  (<span class="num">2</span> |+| <span class="num">2</span>) === <span class="num">1</span> <span class="cmt">// true</span>
-}
-{
-  <span class="cmt">// Use blocks to use different implicit groups.</span>
-  <span class="kw">implicit</span> <span class="kw">val</span> C5 = Cyclic(<span class="num">5</span>)
-  <span class="num">3</span> |+| <span class="num">4</span> <span class="cmt">// 2</span>
-}</pre></span></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><a href="../sets/Finite.html" class="extype" name="agecaf.morealgebra.sets.Finite">Finite</a>[<span class="extype" name="scala.Int">Int</span>], <a href="../sets/Countable.html" class="extype" name="agecaf.morealgebra.sets.Countable">Countable</a>[<span class="extype" name="scala.Int">Int</span>], <a href="../sets/Cardinality.html" class="extype" name="agecaf.morealgebra.sets.Cardinality">Cardinality</a>[<span class="extype" name="scala.Int">Int</span>], <span class="extype" name="spire.algebra.Eq">Eq</span>[<span class="extype" name="scala.Int">Int</span>], <span class="extype" name="spire.algebra.AbGroup">AbGroup</span>[<span class="extype" name="scala.Int">Int</span>], <span class="extype" name="spire.algebra.CMonoid">CMonoid</span>[<span class="extype" name="scala.Int">Int</span>], <span class="extype" name="spire.algebra.CSemigroup">CSemigroup</span>[<span class="extype" name="scala.Int">Int</span>], <span class="extype" name="spire.algebra.Group">Group</span>[<span class="extype" name="scala.Int">Int</span>], <span class="extype" name="spire.algebra.Monoid">Monoid</span>[<span class="extype" name="scala.Int">Int</span>], <span class="extype" name="spire.algebra.Semigroup">Semigroup</span>[<span class="extype" name="scala.Int">Int</span>], <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><a href="Quotient.html" class="extype" name="agecaf.morealgebra.groups.Quotient">Quotient</a>[<span class="extype" name="agecaf.morealgebra.groups.ReducibleQuotient.A">A</span>], <span class="extype" name="spire.algebra.Group">Group</span>[<span class="extype" name="agecaf.morealgebra.groups.ReducibleQuotient.A">A</span>], <span class="extype" name="spire.algebra.Monoid">Monoid</span>[<span class="extype" name="agecaf.morealgebra.groups.ReducibleQuotient.A">A</span>], <span class="extype" name="spire.algebra.Semigroup">Semigroup</span>[<span class="extype" name="agecaf.morealgebra.groups.ReducibleQuotient.A">A</span>], <a href="../sets/Reduce.html" class="extype" name="agecaf.morealgebra.sets.Reduce">Reduce</a>[<span class="extype" name="agecaf.morealgebra.groups.ReducibleQuotient.A">A</span>], <span class="extype" name="spire.algebra.Eq">Eq</span>[<span class="extype" name="agecaf.morealgebra.groups.ReducibleQuotient.A">A</span>], <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -97,7 +71,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="agecaf.morealgebra.groups.Cyclic"><span>Cyclic</span></li><li class="in" name="agecaf.morealgebra.sets.Finite"><span>Finite</span></li><li class="in" name="agecaf.morealgebra.sets.Countable"><span>Countable</span></li><li class="in" name="agecaf.morealgebra.sets.Cardinality"><span>Cardinality</span></li><li class="in" name="spire.algebra.Eq"><span>Eq</span></li><li class="in" name="spire.algebra.AbGroup"><span>AbGroup</span></li><li class="in" name="spire.algebra.CMonoid"><span>CMonoid</span></li><li class="in" name="spire.algebra.CSemigroup"><span>CSemigroup</span></li><li class="in" name="spire.algebra.Group"><span>Group</span></li><li class="in" name="spire.algebra.Monoid"><span>Monoid</span></li><li class="in" name="spire.algebra.Semigroup"><span>Semigroup</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="agecaf.morealgebra.groups.ReducibleQuotient"><span>ReducibleQuotient</span></li><li class="in" name="agecaf.morealgebra.groups.Quotient"><span>Quotient</span></li><li class="in" name="spire.algebra.Group"><span>Group</span></li><li class="in" name="spire.algebra.Monoid"><span>Monoid</span></li><li class="in" name="spire.algebra.Semigroup"><span>Semigroup</span></li><li class="in" name="agecaf.morealgebra.sets.Reduce"><span>Reduce</span></li><li class="in" name="spire.algebra.Eq"><span>Eq</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -114,34 +88,85 @@
 
       <div id="template">
         <div id="allMembers">
-        <div id="constructors" class="members">
-              <h3>Instance Constructors</h3>
-              <ol><li name="agecaf.morealgebra.groups.Cyclic#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&lt;init&gt;(m:Int):agecaf.morealgebra.groups.Cyclic"></a>
-      <a id="&lt;init&gt;:Cyclic"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">new</span>
-      </span>
-      <span class="symbol">
-        <span class="name">Cyclic</span><span class="params">(<span name="m">m: <span class="extype" name="scala.Int">Int</span></span>)</span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../index.html#agecaf.morealgebra.groups.Cyclic@&lt;init&gt;(m:Int):agecaf.morealgebra.groups.Cyclic" title="Permalink" target="_top">
-        <img src="../../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      
-    </li></ol>
-            </div>
-
         
 
         
 
         <div id="values" class="values members">
-              <h3>Value Members</h3>
+              <h3>Abstract Value Members</h3>
+              <ol><li name="spire.algebra.Monoid#id" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="id:A"></a>
+      <a id="id:A"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">id</span><span class="result">: <span class="extype" name="agecaf.morealgebra.groups.ReducibleQuotient.A">A</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#agecaf.morealgebra.groups.ReducibleQuotient@id:A" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Monoid</dd></dl></div>
+    </li><li name="spire.algebra.Group#inverse" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="inverse(a:A):A"></a>
+      <a id="inverse(A):A"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">inverse</span><span class="params">(<span name="a">a: <span class="extype" name="agecaf.morealgebra.groups.ReducibleQuotient.A">A</span></span>)</span><span class="result">: <span class="extype" name="agecaf.morealgebra.groups.ReducibleQuotient.A">A</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#agecaf.morealgebra.groups.ReducibleQuotient@inverse(a:A):A" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Group</dd></dl></div>
+    </li><li name="spire.algebra.Semigroup#op" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="op(x:A,y:A):A"></a>
+      <a id="op(A,A):A"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">op</span><span class="params">(<span name="x">x: <span class="extype" name="agecaf.morealgebra.groups.ReducibleQuotient.A">A</span></span>, <span name="y">y: <span class="extype" name="agecaf.morealgebra.groups.ReducibleQuotient.A">A</span></span>)</span><span class="result">: <span class="extype" name="agecaf.morealgebra.groups.ReducibleQuotient.A">A</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#agecaf.morealgebra.groups.ReducibleQuotient@op(x:A,y:A):A" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Semigroup</dd></dl></div>
+    </li><li name="agecaf.morealgebra.sets.Reduce#reduce" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="reduce(x:A):A"></a>
+      <a id="reduce(A):A"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">reduce</span><span class="params">(<span name="x">x: <span class="extype" name="agecaf.morealgebra.groups.ReducibleQuotient.A">A</span></span>)</span><span class="result">: <span class="extype" name="agecaf.morealgebra.groups.ReducibleQuotient.A">A</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#agecaf.morealgebra.groups.ReducibleQuotient@reduce(x:A):A" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../sets/Reduce.html" class="extype" name="agecaf.morealgebra.sets.Reduce">Reduce</a></dd></dl></div>
+    </li></ol>
+            </div>
+
+        <div id="values" class="values members">
+              <h3>Concrete Value Members</h3>
               <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="!=(x$1:Any):Boolean"></a>
       <a id="!=(Any):Boolean"></a>
@@ -154,7 +179,7 @@
         <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#agecaf.morealgebra.groups.Cyclic@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+      <a href="../../../index.html#agecaf.morealgebra.groups.ReducibleQuotient@!=(x$1:Any):Boolean" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -171,7 +196,7 @@
         <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#agecaf.morealgebra.groups.Cyclic@##():Int" title="Permalink" target="_top">
+      <a href="../../../index.html#agecaf.morealgebra.groups.ReducibleQuotient@##():Int" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -188,7 +213,7 @@
         <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#agecaf.morealgebra.groups.Cyclic@==(x$1:Any):Boolean" title="Permalink" target="_top">
+      <a href="../../../index.html#agecaf.morealgebra.groups.ReducibleQuotient@==(x$1:Any):Boolean" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -205,7 +230,7 @@
         <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#agecaf.morealgebra.groups.Cyclic@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+      <a href="../../../index.html#agecaf.morealgebra.groups.ReducibleQuotient@asInstanceOf[T0]:T0" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -222,7 +247,7 @@
         <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#agecaf.morealgebra.groups.Cyclic@clone():Object" title="Permalink" target="_top">
+      <a href="../../../index.html#agecaf.morealgebra.groups.ReducibleQuotient@clone():Object" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -235,68 +260,68 @@
         </dd></dl></div>
     </li><li name="spire.algebra.Monoid#combine" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="combine(as:TraversableOnce[A]):A"></a>
-      <a id="combine(TraversableOnce[Int]):Int"></a>
+      <a id="combine(TraversableOnce[A]):A"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">combine</span><span class="params">(<span name="as">as: <span class="extype" name="scala.TraversableOnce">TraversableOnce</span>[<span class="extype" name="scala.Int">Int</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+        <span class="name">combine</span><span class="params">(<span name="as">as: <span class="extype" name="scala.TraversableOnce">TraversableOnce</span>[<span class="extype" name="agecaf.morealgebra.groups.ReducibleQuotient.A">A</span>]</span>)</span><span class="result">: <span class="extype" name="agecaf.morealgebra.groups.ReducibleQuotient.A">A</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#agecaf.morealgebra.groups.Cyclic@combine(as:TraversableOnce[A]):A" title="Permalink" target="_top">
+      <a href="../../../index.html#agecaf.morealgebra.groups.ReducibleQuotient@combine(as:TraversableOnce[A]):A" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Monoid</dd></dl></div>
     </li><li name="spire.algebra.Semigroup#combineOption" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="combineOption(as:TraversableOnce[A]):Option[A]"></a>
-      <a id="combineOption(TraversableOnce[Int]):Option[Int]"></a>
+      <a id="combineOption(TraversableOnce[A]):Option[A]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">combineOption</span><span class="params">(<span name="as">as: <span class="extype" name="scala.TraversableOnce">TraversableOnce</span>[<span class="extype" name="scala.Int">Int</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Int">Int</span>]</span>
+        <span class="name">combineOption</span><span class="params">(<span name="as">as: <span class="extype" name="scala.TraversableOnce">TraversableOnce</span>[<span class="extype" name="agecaf.morealgebra.groups.ReducibleQuotient.A">A</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="agecaf.morealgebra.groups.ReducibleQuotient.A">A</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#agecaf.morealgebra.groups.Cyclic@combineOption(as:TraversableOnce[A]):Option[A]" title="Permalink" target="_top">
+      <a href="../../../index.html#agecaf.morealgebra.groups.ReducibleQuotient@combineOption(as:TraversableOnce[A]):Option[A]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Semigroup</dd></dl></div>
     </li><li name="spire.algebra.Group#combinen" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="combinen(a:A,n:Int):A"></a>
-      <a id="combinen(Int,Int):Int"></a>
+      <a id="combinen(A,Int):A"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">combinen</span><span class="params">(<span name="a">a: <span class="extype" name="scala.Int">Int</span></span>, <span name="n">n: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+        <span class="name">combinen</span><span class="params">(<span name="a">a: <span class="extype" name="agecaf.morealgebra.groups.ReducibleQuotient.A">A</span></span>, <span name="n">n: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="agecaf.morealgebra.groups.ReducibleQuotient.A">A</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#agecaf.morealgebra.groups.Cyclic@combinen(a:A,n:Int):A" title="Permalink" target="_top">
+      <a href="../../../index.html#agecaf.morealgebra.groups.ReducibleQuotient@combinen(a:A,n:Int):A" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Group → Monoid → Semigroup</dd></dl></div>
     </li><li name="spire.algebra.Semigroup#combinenAboveOne" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="combinenAboveOne(a:A,n:Int):A"></a>
-      <a id="combinenAboveOne(Int,Int):Int"></a>
+      <a id="combinenAboveOne(A,Int):A"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">combinenAboveOne</span><span class="params">(<span name="a">a: <span class="extype" name="scala.Int">Int</span></span>, <span name="n">n: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+        <span class="name">combinenAboveOne</span><span class="params">(<span name="a">a: <span class="extype" name="agecaf.morealgebra.groups.ReducibleQuotient.A">A</span></span>, <span name="n">n: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="agecaf.morealgebra.groups.ReducibleQuotient.A">A</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#agecaf.morealgebra.groups.Cyclic@combinenAboveOne(a:A,n:Int):A" title="Permalink" target="_top">
+      <a href="../../../index.html#agecaf.morealgebra.groups.ReducibleQuotient@combinenAboveOne(a:A,n:Int):A" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -313,7 +338,7 @@
         <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#agecaf.morealgebra.groups.Cyclic@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+      <a href="../../../index.html#agecaf.morealgebra.groups.ReducibleQuotient@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -330,62 +355,28 @@
         <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#agecaf.morealgebra.groups.Cyclic@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+      <a href="../../../index.html#agecaf.morealgebra.groups.ReducibleQuotient@equals(x$1:Any):Boolean" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="agecaf.morealgebra.groups.Cyclic#eqv" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="eqv(a:Int,b:Int):Boolean"></a>
-      <a id="eqv(Int,Int):Boolean"></a>
+    </li><li name="agecaf.morealgebra.sets.Reduce#eqv" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eqv(a:A,b:A):Boolean"></a>
+      <a id="eqv(A,A):Boolean"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">eqv</span><span class="params">(<span name="a">a: <span class="extype" name="scala.Int">Int</span></span>, <span name="b">b: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+        <span class="name">eqv</span><span class="params">(<span name="a">a: <span class="extype" name="agecaf.morealgebra.groups.ReducibleQuotient.A">A</span></span>, <span name="b">b: <span class="extype" name="agecaf.morealgebra.groups.ReducibleQuotient.A">A</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#agecaf.morealgebra.groups.Cyclic@eqv(a:Int,b:Int):Boolean" title="Permalink" target="_top">
+      <a href="../../../index.html#agecaf.morealgebra.groups.ReducibleQuotient@eqv(a:A,b:A):Boolean" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="agecaf.morealgebra.groups.Cyclic">Cyclic</a> → Eq</dd></dl></div>
-    </li><li name="agecaf.morealgebra.groups.Cyclic#everything" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="everything:scala.collection.immutable.Set[Int]"></a>
-      <a id="everything:Set[Int]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">lazy val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">everything</span><span class="result">: <span class="extype" name="scala.collection.immutable.Set">Set</span>[<span class="extype" name="scala.Int">Int</span>]</span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../index.html#agecaf.morealgebra.groups.Cyclic@everything:scala.collection.immutable.Set[Int]" title="Permalink" target="_top">
-        <img src="../../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="agecaf.morealgebra.groups.Cyclic">Cyclic</a> → <a href="../sets/Finite.html" class="extype" name="agecaf.morealgebra.sets.Finite">Finite</a></dd></dl></div>
-    </li><li name="agecaf.morealgebra.sets.Finite#everythingOpt" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="everythingOpt:Some[Set[A]]"></a>
-      <a id="everythingOpt:Some[Set[Int]]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">lazy val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">everythingOpt</span><span class="result">: <span class="extype" name="scala.Some">Some</span>[<span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Int">Int</span>]]</span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../index.html#agecaf.morealgebra.groups.Cyclic@everythingOpt:Some[Set[A]]" title="Permalink" target="_top">
-        <img src="../../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../sets/Finite.html" class="extype" name="agecaf.morealgebra.sets.Finite">Finite</a> → <a href="../sets/Countable.html" class="extype" name="agecaf.morealgebra.sets.Countable">Countable</a> → <a href="../sets/Cardinality.html" class="extype" name="agecaf.morealgebra.sets.Cardinality">Cardinality</a></dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../sets/Reduce.html" class="extype" name="agecaf.morealgebra.sets.Reduce">Reduce</a> → Eq</dd></dl></div>
     </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
       <a id="finalize():Unit"></a>
@@ -398,7 +389,7 @@
         <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#agecaf.morealgebra.groups.Cyclic@finalize():Unit" title="Permalink" target="_top">
+      <a href="../../../index.html#agecaf.morealgebra.groups.ReducibleQuotient@finalize():Unit" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -409,40 +400,6 @@
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="agecaf.morealgebra.sets.Finite#generator" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="generator:scala.collection.immutable.Stream[A]"></a>
-      <a id="generator:Stream[Int]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">lazy val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">generator</span><span class="result">: <span class="extype" name="scala.collection.immutable.Stream">Stream</span>[<span class="extype" name="scala.Int">Int</span>]</span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../index.html#agecaf.morealgebra.groups.Cyclic@generator:scala.collection.immutable.Stream[A]" title="Permalink" target="_top">
-        <img src="../../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../sets/Finite.html" class="extype" name="agecaf.morealgebra.sets.Finite">Finite</a> → <a href="../sets/Countable.html" class="extype" name="agecaf.morealgebra.sets.Countable">Countable</a></dd></dl></div>
-    </li><li name="agecaf.morealgebra.sets.Countable#generatorOpt" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="generatorOpt:Some[Stream[A]]"></a>
-      <a id="generatorOpt:Some[Stream[Int]]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">lazy val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">generatorOpt</span><span class="result">: <span class="extype" name="scala.Some">Some</span>[<span class="extype" name="scala.Stream">Stream</span>[<span class="extype" name="scala.Int">Int</span>]]</span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../index.html#agecaf.morealgebra.groups.Cyclic@generatorOpt:Some[Stream[A]]" title="Permalink" target="_top">
-        <img src="../../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../sets/Countable.html" class="extype" name="agecaf.morealgebra.sets.Countable">Countable</a> → <a href="../sets/Cardinality.html" class="extype" name="agecaf.morealgebra.sets.Cardinality">Cardinality</a></dd></dl></div>
     </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <a id="getClass():Class[_]"></a>
@@ -455,7 +412,7 @@
         <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#agecaf.morealgebra.groups.Cyclic@getClass():Class[_]" title="Permalink" target="_top">
+      <a href="../../../index.html#agecaf.morealgebra.groups.ReducibleQuotient@getClass():Class[_]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -472,92 +429,24 @@
         <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#agecaf.morealgebra.groups.Cyclic@hashCode():Int" title="Permalink" target="_top">
+      <a href="../../../index.html#agecaf.morealgebra.groups.ReducibleQuotient@hashCode():Int" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="agecaf.morealgebra.groups.Cyclic#id" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="id:Int"></a>
-      <a id="id:Int"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">id</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../index.html#agecaf.morealgebra.groups.Cyclic@id:Int" title="Permalink" target="_top">
-        <img src="../../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="agecaf.morealgebra.groups.Cyclic">Cyclic</a> → Monoid</dd></dl></div>
-    </li><li name="agecaf.morealgebra.groups.Cyclic#inverse" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="inverse(a:Int):Int"></a>
-      <a id="inverse(Int):Int"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">inverse</span><span class="params">(<span name="a">a: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../index.html#agecaf.morealgebra.groups.Cyclic@inverse(a:Int):Int" title="Permalink" target="_top">
-        <img src="../../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="agecaf.morealgebra.groups.Cyclic">Cyclic</a> → Group</dd></dl></div>
-    </li><li name="agecaf.morealgebra.sets.Cardinality#isCountable" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="isCountable:Boolean"></a>
-      <a id="isCountable:Boolean"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">lazy val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">isCountable</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../index.html#agecaf.morealgebra.groups.Cyclic@isCountable:Boolean" title="Permalink" target="_top">
-        <img src="../../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../sets/Cardinality.html" class="extype" name="agecaf.morealgebra.sets.Cardinality">Cardinality</a></dd></dl></div>
-    </li><li name="agecaf.morealgebra.sets.Cardinality#isFinite" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="isFinite:Boolean"></a>
-      <a id="isFinite:Boolean"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">lazy val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">isFinite</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../index.html#agecaf.morealgebra.groups.Cyclic@isFinite:Boolean" title="Permalink" target="_top">
-        <img src="../../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../sets/Cardinality.html" class="extype" name="agecaf.morealgebra.sets.Cardinality">Cardinality</a></dd></dl></div>
     </li><li name="spire.algebra.Monoid#isId" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isId(a:A)(implicitev:spire.algebra.Eq[A]):Boolean"></a>
-      <a id="isId(Int)(Eq[Int]):Boolean"></a>
+      <a id="isId(A)(Eq[A]):Boolean"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">isId</span><span class="params">(<span name="a">a: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <span class="extype" name="spire.algebra.Eq">Eq</span>[<span class="extype" name="scala.Int">Int</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+        <span class="name">isId</span><span class="params">(<span name="a">a: <span class="extype" name="agecaf.morealgebra.groups.ReducibleQuotient.A">A</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="ev">ev: <span class="extype" name="spire.algebra.Eq">Eq</span>[<span class="extype" name="agecaf.morealgebra.groups.ReducibleQuotient.A">A</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#agecaf.morealgebra.groups.Cyclic@isId(a:A)(implicitev:spire.algebra.Eq[A]):Boolean" title="Permalink" target="_top">
+      <a href="../../../index.html#agecaf.morealgebra.groups.ReducibleQuotient@isId(a:A)(implicitev:spire.algebra.Eq[A]):Boolean" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -574,7 +463,7 @@
         <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#agecaf.morealgebra.groups.Cyclic@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+      <a href="../../../index.html#agecaf.morealgebra.groups.ReducibleQuotient@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -591,24 +480,24 @@
         <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#agecaf.morealgebra.groups.Cyclic@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+      <a href="../../../index.html#agecaf.morealgebra.groups.ReducibleQuotient@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="spire.algebra.Eq#neqv" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="neqv(x:A,y:A):Boolean"></a>
-      <a id="neqv(Int,Int):Boolean"></a>
+      <a id="neqv(A,A):Boolean"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">neqv</span><span class="params">(<span name="x">x: <span class="extype" name="scala.Int">Int</span></span>, <span name="y">y: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+        <span class="name">neqv</span><span class="params">(<span name="x">x: <span class="extype" name="agecaf.morealgebra.groups.ReducibleQuotient.A">A</span></span>, <span name="y">y: <span class="extype" name="agecaf.morealgebra.groups.ReducibleQuotient.A">A</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#agecaf.morealgebra.groups.Cyclic@neqv(x:A,y:A):Boolean" title="Permalink" target="_top">
+      <a href="../../../index.html#agecaf.morealgebra.groups.ReducibleQuotient@neqv(x:A,y:A):Boolean" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -625,7 +514,7 @@
         <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#agecaf.morealgebra.groups.Cyclic@notify():Unit" title="Permalink" target="_top">
+      <a href="../../../index.html#agecaf.morealgebra.groups.ReducibleQuotient@notify():Unit" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -642,58 +531,41 @@
         <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#agecaf.morealgebra.groups.Cyclic@notifyAll():Unit" title="Permalink" target="_top">
+      <a href="../../../index.html#agecaf.morealgebra.groups.ReducibleQuotient@notifyAll():Unit" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="spire.algebra.Eq#on" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="on[B](f:B=&gt;A):spire.algebra.Eq[B]"></a>
-      <a id="on[B]((B)⇒Int):Eq[B]"></a>
+      <a id="on[B]((B)⇒A):Eq[B]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">on</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="f">f: (<span class="extype" name="spire.algebra.Eq.on.B">B</span>) ⇒ <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="spire.algebra.Eq">Eq</span>[<span class="extype" name="spire.algebra.Eq.on.B">B</span>]</span>
+        <span class="name">on</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="f">f: (<span class="extype" name="spire.algebra.Eq.on.B">B</span>) ⇒ <span class="extype" name="agecaf.morealgebra.groups.ReducibleQuotient.A">A</span></span>)</span><span class="result">: <span class="extype" name="spire.algebra.Eq">Eq</span>[<span class="extype" name="spire.algebra.Eq.on.B">B</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#agecaf.morealgebra.groups.Cyclic@on[B](f:B=&gt;A):spire.algebra.Eq[B]" title="Permalink" target="_top">
+      <a href="../../../index.html#agecaf.morealgebra.groups.ReducibleQuotient@on[B](f:B=&gt;A):spire.algebra.Eq[B]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Eq</dd></dl></div>
-    </li><li name="agecaf.morealgebra.groups.Cyclic#op" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="op(a:Int,b:Int):Int"></a>
-      <a id="op(Int,Int):Int"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">op</span><span class="params">(<span name="a">a: <span class="extype" name="scala.Int">Int</span></span>, <span name="b">b: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../index.html#agecaf.morealgebra.groups.Cyclic@op(a:Int,b:Int):Int" title="Permalink" target="_top">
-        <img src="../../../lib/permalink.png" alt="Permalink" />
-      </a>
-    </span>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="agecaf.morealgebra.groups.Cyclic">Cyclic</a> → Semigroup</dd></dl></div>
     </li><li name="spire.algebra.Group#opInverse" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="opInverse(a:A,b:A):A"></a>
-      <a id="opInverse(Int,Int):Int"></a>
+      <a id="opInverse(A,A):A"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">opInverse</span><span class="params">(<span name="a">a: <span class="extype" name="scala.Int">Int</span></span>, <span name="b">b: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+        <span class="name">opInverse</span><span class="params">(<span name="a">a: <span class="extype" name="agecaf.morealgebra.groups.ReducibleQuotient.A">A</span></span>, <span name="b">b: <span class="extype" name="agecaf.morealgebra.groups.ReducibleQuotient.A">A</span></span>)</span><span class="result">: <span class="extype" name="agecaf.morealgebra.groups.ReducibleQuotient.A">A</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#agecaf.morealgebra.groups.Cyclic@opInverse(a:A,b:A):A" title="Permalink" target="_top">
+      <a href="../../../index.html#agecaf.morealgebra.groups.ReducibleQuotient@opInverse(a:A,b:A):A" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -710,7 +582,7 @@
         <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#agecaf.morealgebra.groups.Cyclic@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+      <a href="../../../index.html#agecaf.morealgebra.groups.ReducibleQuotient@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -727,7 +599,7 @@
         <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#agecaf.morealgebra.groups.Cyclic@toString():String" title="Permalink" target="_top">
+      <a href="../../../index.html#agecaf.morealgebra.groups.ReducibleQuotient@toString():String" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -744,7 +616,7 @@
         <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#agecaf.morealgebra.groups.Cyclic@wait():Unit" title="Permalink" target="_top">
+      <a href="../../../index.html#agecaf.morealgebra.groups.ReducibleQuotient@wait():Unit" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -767,7 +639,7 @@
         <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#agecaf.morealgebra.groups.Cyclic@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+      <a href="../../../index.html#agecaf.morealgebra.groups.ReducibleQuotient@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -790,7 +662,7 @@
         <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#agecaf.morealgebra.groups.Cyclic@wait(x$1:Long):Unit" title="Permalink" target="_top">
+      <a href="../../../index.html#agecaf.morealgebra.groups.ReducibleQuotient@wait(x$1:Long):Unit" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" alt="Permalink" />
       </a>
     </span>
@@ -810,26 +682,18 @@
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="agecaf.morealgebra.sets.Finite">
-              <h3>Inherited from <a href="../sets/Finite.html" class="extype" name="agecaf.morealgebra.sets.Finite">Finite</a>[<span class="extype" name="scala.Int">Int</span>]</h3>
-            </div><div class="parent" name="agecaf.morealgebra.sets.Countable">
-              <h3>Inherited from <a href="../sets/Countable.html" class="extype" name="agecaf.morealgebra.sets.Countable">Countable</a>[<span class="extype" name="scala.Int">Int</span>]</h3>
-            </div><div class="parent" name="agecaf.morealgebra.sets.Cardinality">
-              <h3>Inherited from <a href="../sets/Cardinality.html" class="extype" name="agecaf.morealgebra.sets.Cardinality">Cardinality</a>[<span class="extype" name="scala.Int">Int</span>]</h3>
-            </div><div class="parent" name="spire.algebra.Eq">
-              <h3>Inherited from <span class="extype" name="spire.algebra.Eq">Eq</span>[<span class="extype" name="scala.Int">Int</span>]</h3>
-            </div><div class="parent" name="spire.algebra.AbGroup">
-              <h3>Inherited from <span class="extype" name="spire.algebra.AbGroup">AbGroup</span>[<span class="extype" name="scala.Int">Int</span>]</h3>
-            </div><div class="parent" name="spire.algebra.CMonoid">
-              <h3>Inherited from <span class="extype" name="spire.algebra.CMonoid">CMonoid</span>[<span class="extype" name="scala.Int">Int</span>]</h3>
-            </div><div class="parent" name="spire.algebra.CSemigroup">
-              <h3>Inherited from <span class="extype" name="spire.algebra.CSemigroup">CSemigroup</span>[<span class="extype" name="scala.Int">Int</span>]</h3>
+        <div class="parent" name="agecaf.morealgebra.groups.Quotient">
+              <h3>Inherited from <a href="Quotient.html" class="extype" name="agecaf.morealgebra.groups.Quotient">Quotient</a>[<span class="extype" name="agecaf.morealgebra.groups.ReducibleQuotient.A">A</span>]</h3>
             </div><div class="parent" name="spire.algebra.Group">
-              <h3>Inherited from <span class="extype" name="spire.algebra.Group">Group</span>[<span class="extype" name="scala.Int">Int</span>]</h3>
+              <h3>Inherited from <span class="extype" name="spire.algebra.Group">Group</span>[<span class="extype" name="agecaf.morealgebra.groups.ReducibleQuotient.A">A</span>]</h3>
             </div><div class="parent" name="spire.algebra.Monoid">
-              <h3>Inherited from <span class="extype" name="spire.algebra.Monoid">Monoid</span>[<span class="extype" name="scala.Int">Int</span>]</h3>
+              <h3>Inherited from <span class="extype" name="spire.algebra.Monoid">Monoid</span>[<span class="extype" name="agecaf.morealgebra.groups.ReducibleQuotient.A">A</span>]</h3>
             </div><div class="parent" name="spire.algebra.Semigroup">
-              <h3>Inherited from <span class="extype" name="spire.algebra.Semigroup">Semigroup</span>[<span class="extype" name="scala.Int">Int</span>]</h3>
+              <h3>Inherited from <span class="extype" name="spire.algebra.Semigroup">Semigroup</span>[<span class="extype" name="agecaf.morealgebra.groups.ReducibleQuotient.A">A</span>]</h3>
+            </div><div class="parent" name="agecaf.morealgebra.sets.Reduce">
+              <h3>Inherited from <a href="../sets/Reduce.html" class="extype" name="agecaf.morealgebra.sets.Reduce">Reduce</a>[<span class="extype" name="agecaf.morealgebra.groups.ReducibleQuotient.A">A</span>]</h3>
+            </div><div class="parent" name="spire.algebra.Eq">
+              <h3>Inherited from <span class="extype" name="spire.algebra.Eq">Eq</span>[<span class="extype" name="agecaf.morealgebra.groups.ReducibleQuotient.A">A</span>]</h3>
             </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">
