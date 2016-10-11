@@ -50,3 +50,4 @@ package object groups
   with Standard
   with GroupDirectProduct
   with GroupSemidirectProduct
+  with CosetSyntax
